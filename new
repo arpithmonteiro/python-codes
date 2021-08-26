@@ -1,0 +1,26 @@
+A nested loop puzzle
+Difficulty Level : Medium
+Last Updated : 02 Jul, 2021
+Which of the following two code segments is faster? Assume that compiler makes no optimizations. 
+ 
+
+# FIRST
+for i in range(10):
+    for j in range(100):
+        #do something
+ 
+# This code is contributed by shivani
+# SECOND
+for i in range(100):
+    for j in range(10):
+       
+      # Do something
+ 
+# This code is contributed by shivani
+Both code segments provide same functionality, and the code inside the two for loops would be executed same number of times in both code segments. 
+If we take a closer look then we can see that the SECOND does more operations than the FIRST. It executes all three parts (assignment, comparison and increment) of the for loop more times than the corresponding parts of FIRST: 
+
+The SECOND executes assignment operations ( j = 0 or i = 0) 101 times while FIRST executes only 11 times.
+The SECOND does 101 + 1100 comparisons (i < 100 or j < 10) while the FIRST does 11 + 1010 comparisons (i < 10 or j < 100).
+The SECOND executes 1100 increment operations (i++ or j++) while the FIRST executes 1010 increment operation.
+Below code counts the number of increment operations executed in FIRST and SECOND, and prints the counts.
