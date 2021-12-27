@@ -1,0 +1,18 @@
+class Solution:
+    def reverseBits(self, n: int) -> int:
+        a=[]
+        f=[]
+        i=0
+        r=0
+        N=int(n)
+        while N>0:
+            x=N%2
+            a.append(x)
+            N=N//2
+            i+=1
+        if(len(a)<32):
+            a = a + [0]*(32-len(a))
+        print(a)
+        for i in range(len(a)):
+            r=r+a[i]*(2**(31-i))
+        return(r)
